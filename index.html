@@ -8,89 +8,174 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 <body>
 
-<header>
+<div id="particles"></div>
+
+<div class="progress-bar"></div>
+
 <nav>
-<h1>🌱 Agro 2050</h1>
-
-<ul>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#tecnologias">Tecnologias</a></li>
-<li><a href="#futuro">Futuro</a></li>
-</ul>
-
-</nav>
-
-<div class="hero">
-<h2>O Agro Forte e Sustentável do Brasil em 2050</h2>
-<p>Tecnologia, produtividade e preservação ambiental caminhando juntas.</p>
-
-<button id="btnExplorar">Explorar</button>
+<div class="logo">
+🌱 Agro 2050
 </div>
 
-</header>
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#indicadores">Indicadores</a></li>
+<li><a href="#timeline">Linha do Tempo</a></li>
+<li><a href="#simulador">Simulador</a></li>
+<li><a href="#quiz">Quiz</a></li>
+</ul>
 
-<section id="sobre" class="section">
-<h2>🌎 Visão para 2050</h2>
+<button id="themeBtn">
+🌙
+</button>
+</nav>
+
+<section id="inicio" class="hero">
+
+<div class="hero-content">
+
+<h1>
+O AGRO FORTE E SUSTENTÁVEL DO BRASIL EM 2050
+</h1>
 
 <p>
-Em 2050 o Brasil será líder mundial em produção sustentável,
-utilizando inteligência artificial, drones, robótica e energia limpa
-para aumentar a produtividade sem comprometer os recursos naturais.
+Tecnologia, inteligência artificial, energia limpa e produção sustentável.
 </p>
+
+<button id="explorar">
+Explorar o Futuro
+</button>
+
+</div>
+
 </section>
 
-<section class="contador">
-<h2>Produção Sustentável</h2>
+<section id="indicadores">
 
-<div class="numero" id="contador">0</div>
-
-<p>Milhões de toneladas produzidas de forma sustentável.</p>
-</section>
-
-<section id="tecnologias" class="section">
-
-<h2>🚜 Tecnologias do Futuro</h2>
+<h2>Indicadores Agro 2050</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>🤖 Robótica</h3>
-<p>Máquinas autônomas realizando plantio e colheita.</p>
+<h3 id="prod">0</h3>
+<p>Milhões de toneladas produzidas</p>
 </div>
 
 <div class="card">
-<h3>🛰️ Drones</h3>
-<p>Monitoramento inteligente das lavouras.</p>
+<h3 id="agua">0</h3>
+<p>% de economia de água</p>
 </div>
 
 <div class="card">
-<h3>☀️ Energia Limpa</h3>
-<p>Fazendas movidas por energia solar e biogás.</p>
+<h3 id="carbono">0</h3>
+<p>% menos emissão de carbono</p>
 </div>
 
 <div class="card">
-<h3>🌿 Agricultura de Precisão</h3>
-<p>Uso eficiente de água e fertilizantes.</p>
+<h3 id="energia">0</h3>
+<p>% energia renovável</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="futuro" class="parallax">
+<section id="timeline">
 
-<div class="overlay">
-<h2>Brasil Potência Verde</h2>
+<h2>Linha do Tempo</h2>
+
+<div class="timeline">
+
+<div class="year" onclick="mostrarAno(2025)">
+2025
+</div>
+
+<div class="year" onclick="mostrarAno(2035)">
+2035
+</div>
+
+<div class="year" onclick="mostrarAno(2045)">
+2045
+</div>
+
+<div class="year" onclick="mostrarAno(2050)">
+2050
+</div>
+
+</div>
+
+<div id="infoAno">
+Clique em um ano para descobrir o futuro.
+</div>
+
+</section>
+
+<section id="simulador">
+
+<h2>Simulador de Fazenda Sustentável</h2>
+
+<label>Drones:</label>
+<input type="range" id="drones" min="0" max="100">
+
+<label>Inteligência Artificial:</label>
+<input type="range" id="ia" min="0" max="100">
+
+<label>Energia Solar:</label>
+<input type="range" id="solar" min="0" max="100">
+
+<label>Reuso de Água:</label>
+<input type="range" id="aguaRange" min="0" max="100">
+
+<button onclick="simular()">
+Simular Fazenda
+</button>
+
+<div id="resultado"></div>
+
+</section>
+
+<section id="quiz">
+
+<h2>Quiz Agro 2050</h2>
 
 <p>
-Produzindo mais alimentos para o mundo com menos impacto ambiental.
+Qual tecnologia terá maior impacto no agro?
 </p>
 
+<button onclick="respostaQuiz('a')">
+IA
+</button>
+
+<button onclick="respostaQuiz('b')">
+Drones
+</button>
+
+<button onclick="respostaQuiz('c')">
+Robótica
+</button>
+
+<button onclick="respostaQuiz('d')">
+Todas as anteriores
+</button>
+
+<div id="quizResultado"></div>
+
+</section>
+
+<section id="curiosidades">
+
+<h2>Curiosidades Futuristas</h2>
+
+<div id="curiosidade">
+Carregando...
 </div>
 
 </section>
